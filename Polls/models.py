@@ -1,10 +1,8 @@
 from django.db import models
 
 
-# Create your models here.
-
 class BestPictureNominee(models.Model):
-    best_picture_nominee_id = models.IntegerField
+    best_picture_nominee_id = models.IntegerField(primary_key=True)
     create_user = models.CharField(max_length=50)
     create_date = models.DateTimeField
     update_user = models.CharField(max_length=50)
