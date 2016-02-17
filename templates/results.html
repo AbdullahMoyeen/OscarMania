@@ -26,10 +26,8 @@
         <div class="row">
             {% for nominee in best_picture_nominee_list %}
                 <div class="col-sm-3 col-md-3">
-                    <h4 class="text-center">Total Votes: {{ nominee.sum_votes }}</h4>
+                    <h4 class="text-center">Votes: {{ nominee.sum_votes }}</h4>
                     <image src="{{ nominee.full_image_url }}"
-                            {#                           onmouseover="this.src='http://sumnersunsettheatre.com/wp-content/uploads/The-Martian-movie-poster.jpg'"#}
-                            {#                           onmouseout="this.src='{{ nominee.full_image_url }}'"#}
                            class="img-responsive center-block" alt="{{ nominee.name }}"/>
                     <br>
                     <br>

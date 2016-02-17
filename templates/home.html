@@ -29,8 +29,6 @@
                     <h4 class="text-center"><a href="{% url 'vote' nominee.best_picture_nominee_id %}">Vote
                         for {{ nominee.name }}</a></h4>
                     <image src="{{ nominee.full_image_url }}"
-                            {#                           onmouseover="this.src='http://sumnersunsettheatre.com/wp-content/uploads/The-Martian-movie-poster.jpg'"#}
-                            {#                           onmouseout="this.src='{{ nominee.full_image_url }}'"#}
                            class="img-responsive center-block" alt="{{ nominee.name }}"/>
                     <br>
                     <br>
