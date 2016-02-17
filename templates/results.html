@@ -16,8 +16,8 @@
     <div class="page-header">
         <h1 class="text-center">Oscar 2016 Nominees</h1>
         <h3 class="text-center">Best Picture</h3>
-        <h4 class="text-center">Vote for Your Favorite Movie</h4>
-        <h4 class="text-center"><a href="{% url 'results' %}">Results</a></h4>
+        <h4 class="text-center">Public Poll Results</h4>
+        <h4 class="text-center"><a href="{% url 'home' %}">Home</a></h4>
     </div>
 </div>
 
@@ -26,8 +26,7 @@
         <div class="row">
             {% for nominee in best_picture_nominee_list %}
                 <div class="col-sm-3 col-md-3">
-                    <h4 class="text-center"><a href="{% url 'vote' nominee.best_picture_nominee_id %}">Vote
-                        for {{ nominee.name }}</a></h4>
+                    <h4 class="text-center">Total Votes: {{ nominee.sum_votes }}</h4>
                     <image src="{{ nominee.full_image_url }}"
                             {#                           onmouseover="this.src='http://sumnersunsettheatre.com/wp-content/uploads/The-Martian-movie-poster.jpg'"#}
                             {#                           onmouseout="this.src='{{ nominee.full_image_url }}'"#}
