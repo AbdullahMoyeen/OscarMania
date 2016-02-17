@@ -2,12 +2,12 @@ from django.db import connection
 from django.shortcuts import redirect
 from django.views.generic import ListView
 
-from Polls.models import BestPictureNominee
+from BestPicturePolls.models import BestPictureNominee
 
 
-class HomeView(ListView):
+class PollsView(ListView):
     model = BestPictureNominee
-    template_name = "home.html"
+    template_name = "polls.html"
     context_object_name = "best_picture_nominee_list"
 
     def get_queryset(self):
