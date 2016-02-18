@@ -13,3 +13,8 @@ class BestPictureNominee(models.Model):
     full_image_url = models.CharField(max_length=1000)
     detail_url = models.CharField(max_length=1000)
     sum_votes = models.IntegerField(default=0)
+
+
+class Meta:
+    managed = False
+    db_table = 't_best_picture_nominee'
