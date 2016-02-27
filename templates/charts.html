@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Oscar Mania Results on Chart</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    {% load static %}
+    <link media="all" href="{% static 'nvd3/build/nv.d3.css' %}" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src='{% static 'd3/d3.min.js' %}'></script>
+    <script type="text/javascript" src='{% static 'nvd3/build/nv.d3.min.js' %}'></script>
+    {% load nvd3_tags %}
+    {% load_chart charttype chartdata "piechart_container" %}
+</head>
+<body>
+
+<div class="container">
+    <div class="page-header">
+        <h1 class="text-center">Oscar 2016 Nominees</h1>
+        <table style="margin: auto; text-align: center; font-size: xx-small">
+            <tr>
+                <td>brought to you by</td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <a href="http://www.utdallas.edu/~aam065000/" target="_blank"><img
+                            src="https://s3-us-west-2.amazonaws.com/oscar-mania-images/common/meAmigo.jpg" alt="3amigos"
+                            style="width:50px;"></a>
+                </td>
+            </tr>
+            <tr>
+                <td>Abdullah Moyeen</td>
+            </tr>
+            <tr>
+                <td>SE6301: Cloud Computing</td>
+            </tr>
+            <tr>
+                <td>EMSE, 2016 Spring</td>
+            </tr>
+        </table>
+        <h3 class="text-center">Best Picture</h3>
+        <h4 class="text-center"><a href="{% url 'polls' %}">Go to Polls</a></h4>
+        <h4 class="text-center"><a href="{% url 'results' %}">View Results on Grid</a></h4>
+    </div>
+</div>
+
+<div class="container" align="center">
+    {% include_container "piechart_container" 600 800 %}
+</div>
+
+</body>
+</html>
