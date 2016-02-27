@@ -1,4 +1,5 @@
 from django.db import connection
+from django.db.models import Sum
 from django.shortcuts import redirect
 from django.views.generic import ListView
 from django.shortcuts import render_to_response
@@ -26,9 +27,11 @@ class ResultsView(ListView):
 
 def ChartsView(request):
     best_picture_nominee_list = BestPictureNominee.objects.raw('SELECT * FROM v_best_picture_nominee')
+    total_votes = 0
     xdata = []
     ydata = []
     for best_picture_nominee in best_picture_nominee_list:
+        total_votes = total_votes + best_picture_nominee.num_votes
         xdata.append(best_picture_nominee.name)
         ydata.append(best_picture_nominee.num_votes)
     extra = {
@@ -38,7 +41,8 @@ def ChartsView(request):
     charttype = "pieChart"
     data = {
         'charttype': charttype,
-        'chartdata': chartdata
+        'chartdata': chartdata,
+        'total_votes': total_votes
     }
     return render_to_response('charts.html', data)
 
