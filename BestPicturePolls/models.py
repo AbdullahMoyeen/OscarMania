@@ -12,9 +12,11 @@ class BestPictureNominee(models.Model):
     thumb_image_url = models.CharField(max_length=1000)
     full_image_url = models.CharField(max_length=1000)
     detail_url = models.CharField(max_length=1000)
+    num_votes = models.IntegerField(default=0)
     sum_votes = models.IntegerField(default=0)
+    percent_votes = models.DecimalField(default=0, decimal_places=2, max_digits=4)
 
 
 class Meta:
     managed = False
-    db_table = 't_best_picture_nominee'
+    db_table = 'v_best_picture_nominee'

@@ -27,7 +27,7 @@
                 <td>Abdullah Moyeen</td>
             </tr>
             <tr>
-                <td>SE6301: Cloud Computing</td>
+                <td><a href="http://coursebook.utdallas.edu/cs6301.ms1.16s" target="_blank">SE6301: Cloud Software Development</a></td>
             </tr>
             <tr>
                 <td>EMSE, 2016 Spring</td>
@@ -44,13 +44,23 @@
         <div class="row">
             {% for nominee in best_picture_nominee_list %}
                 <div class="col-sm-3 col-md-3">
-                    <h4 class="text-center">Number of Votes: {{ nominee.sum_votes }}</h4>
+                    <h4 class="text-center">Number of Votes: {{ nominee.num_votes }}<br>({{ nominee.percent_votes }}%)</h4>
                     <a href="{{  nominee.detail_url }} " target="_blank"><image src="{{ nominee.full_image_url }}" class="img-responsive center-block" alt="{{ nominee.name }}" title="open details on imdb"/></a>
                     <br>
                     <br>
                 </div>
             {% endfor %}
         </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="text-center">
+        <p>&nbsp;<br>Oscar Mania is a fun academic project done as part of the <a href="http://coursebook.utdallas.edu/cs6301.ms1.16s" target="_blank">Cloud Software Development</a> course
+            <br>in the <a href="http://emse.utdallas.edu/" target="_blank">Executive Masters in Software Engineering</a> program at the <a href="http://www.utdallas.edu/" target="_blank">University of Texas at Dallas</a>
+            <br>and in no way affiliated with the <a href="http://oscar.go.com/nominees" target="_blank">Oscars</a>.
+            <br>&nbsp;
+        </p>
     </div>
 </div>
 
